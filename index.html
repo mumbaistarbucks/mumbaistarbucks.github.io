@@ -13,52 +13,36 @@
     </style>
 </head>
 <body>
-<model-viewer src="assets/models/newblue.glb" ios-src = "assets/models/newblue.reality" poster="assets/models/newblue.png" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls camera-orbit="0deg 45deg 2m" alt="A 3D model carousel">
+<model-viewer src="assets/models/newblue.glb" poster="assets/models/newblue.png" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls camera-orbit="0deg 45deg 2m" alt="A 3D model carousel">
   
   <button slot="ar-button" id="ar-button">
     View in your space
   </button>
-
   <div id="ar-prompt">
     <img src="assets/hand.png">
   </div>
-
   <button id="ar-failure">
     AR is not tracking!
   </button>
 
 
-
-  <div class="slider">
-    <div class="slides">
-      <button class="slide selected" onclick="switchSrc(this, 'newblue')" style="background-image: url('assets/models/newblue.png');">
-      </button><button class="slide" onclick="switchSrc(this, 'Guitar')" style="background-image: url('assets/models/Guitar.png');">
-      </button><button class="slide" onclick="switchSrc(this, 'guilmon')" style="background-image: url('assets/models/guilmon.png');">    
-      </button><button class="slide" onclick="switchSrc(this, 'digivice')" style="background-image: url('assets/models/digivice.png');">    
-
-
-    </button></div>
+</model-viewer>
+<model-viewer src="assets/models/redguitar.glb" poster="assets/models/redguitar.png" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls camera-orbit="0deg 45deg 2m" alt="A 3D model carousel">
+  
+  <button slot="ar-button" id="ar-button">
+    View in your space
+  </button>
+  <div id="ar-prompt">
+    <img src="assets/hand.png">
   </div>
+  <button id="ar-failure">
+    AR is not tracking!
+  </button>
+
+
 </model-viewer>
 
-<script type="module">
-  const modelViewer = document.querySelector("model-viewer");
 
-  window.switchSrc = (element, name) => {
-    const base = "assets/models/" + name;
-    modelViewer.src = base + '.glb';
-    modelViewer.poster = base + '.png';
-    modelViewer.ios-src = base + '.png';
-    const slides = document.querySelectorAll(".slide");
-    slides.forEach((element) => {element.classList.remove("selected");});
-    element.classList.add("selected");
-  };
-
-  document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
-    // Keep slider interactions from affecting the XR scene.
-    ev.preventDefault();
-  });
-</script>
 
 <style>
   /* This keeps child nodes hidden while the element loads */
