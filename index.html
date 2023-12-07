@@ -13,43 +13,39 @@
     </style>
 </head>
 <body>
-<model-viewer src="guitar.glb" ios-src="finale.reality" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls camera-orbit="0deg 45deg 2m" alt="A 3D model carousel">
+  <div class="grid-container">
+    <div class="grid-item">
+      <model-viewer src="guitar.glb" ios-src="finale.reality" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls camera-orbit="0deg 45deg 2m" alt="A 3D model carousel">
+        <button slot="ar-button" id="ar-button">
+          View in your space
+        </button>
+        <div id="ar-prompt">
+          <img src="assets/hand.png">
+        </div>
+        <button id="ar-failure">
+          AR is not tracking!
+        </button>
+      </model-viewer>
+    </div>
   
-  <button slot="ar-button" id="ar-button">
-    View in your space
-  </button>
-
-  <div id="ar-prompt">
-    <img src="assets/hand.png">
-  </div>
-
-  <button id="ar-failure">
-    AR is not tracking!
-  </button>
-
-
-
- 
-</model-viewer>
-
-<model-viewer src="blue.glb" ios-src="blue.reality" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls camera-orbit="0deg 45deg 2m" alt="A 3D model carousel">
+    <div class="grid-item">
+      <model-viewer src="blue.glb" ios-src="blue.reality" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls camera-orbit="0deg 45deg 2m" alt="A 3D model carousel">
+        <button slot="ar-button" id="ar-button">
+          View in your space
+        </button>
+        <div id="ar-prompt">
+          <img src="assets/hand.png">
+        </div>
+        <button id="ar-failure">
+          AR is not tracking!
+        </button>
+      </model-viewer>
+    </div>
   
-  <button slot="ar-button" id="ar-button">
-    View in your space
-  </button>
-
-  <div id="ar-prompt">
-    <img src="assets/hand.png">
+    <!-- Repeat the above structure for the remaining items -->
+  
   </div>
-
-  <button id="ar-failure">
-    AR is not tracking!
-  </button>
-
-
-
- 
-</model-viewer>
+  
 <style>
   /* This keeps child nodes hidden while the element loads */
   :not(:defined) > * {
