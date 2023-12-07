@@ -13,66 +13,40 @@
     </style>
 </head>
 <body>
-  <div class="grid-container">
-    <div class="grid-item">
-      <model-viewer src="guitar.glb" ios-src="finale.reality" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls camera-orbit="0deg 45deg 2m" alt="A 3D model carousel">
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="assets/hand.png">
-        </div>
-        <button id="ar-failure">
-          AR is not tracking!
-        </button>
-      </model-viewer>
-    </div>
+  <input type="radio" id="tab1" name="tabs" class="tab" checked>
+  <label for="tab1">Tab 1</label>
   
-    <div class="grid-item">
-      <model-viewer src="blue.glb" ios-src="blue.reality" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls camera-orbit="0deg 45deg 2m" alt="A 3D model carousel">
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="assets/hand.png">
-        </div>
-        <button id="ar-failure">
-          AR is not tracking!
-        </button>
-      </model-viewer>
-    </div>
-
-    <div class="grid-item">
-      <model-viewer src="guitar.glb" ios-src="finale.reality" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls camera-orbit="0deg 45deg 2m" alt="A 3D model carousel">
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="assets/hand.png">
-        </div>
-        <button id="ar-failure">
-          AR is not tracking!
-        </button>
-      </model-viewer>
-    </div>
-
-    <div class="grid-item">
-      <model-viewer src="blue.glb" ios-src="blue.reality" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls camera-orbit="0deg 45deg 2m" alt="A 3D model carousel">
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="assets/hand.png">
-        </div>
-        <button id="ar-failure">
-          AR is not tracking!
-        </button>
-      </model-viewer>
-    </div>
-  
-    <!-- Repeat the above structure for the remaining items -->
-  
+  <div class="tab-content">
+    <model-viewer src="guitar.glb" ios-src="finale.reality" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls camera-orbit="0deg 45deg 2m" alt="A 3D model carousel">
+      <button slot="ar-button" id="ar-button-tab1">
+        View in your space
+      </button>
+      <div id="ar-prompt-tab1">
+        <img src="assets/hand.png">
+      </div>
+      <button id="ar-failure-tab1">
+        AR is not tracking!
+      </button>
+    </model-viewer>
   </div>
+  
+  <input type="radio" id="tab2" name="tabs" class="tab">
+  <label for="tab2">Tab 2</label>
+  
+  <div class="tab-content">
+    <model-viewer src="blue.glb" ios-src="blue.reality" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls camera-orbit="0deg 45deg 2m" alt="A 3D model carousel">
+      <button slot="ar-button" id="ar-button-tab2">
+        View in your space
+      </button>
+      <div id="ar-prompt-tab2">
+        <img src="assets/hand.png">
+      </div>
+      <button id="ar-failure-tab2">
+        AR is not tracking!
+      </button>
+    </model-viewer>
+  </div>
+  
   
 <style>
   /* This keeps child nodes hidden while the element loads */
