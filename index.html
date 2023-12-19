@@ -1,183 +1,759 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <!-- Import the component -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
-    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
-    <style>
-        model-viewer {
-            height: 85vh;
-            width: auto;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSE 300 Website</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <input type="radio" id="tab1" name="tabs" class="tab" checked>
-  <label for="tab1">Tab 1</label>
-  
-  <div class="tab-content">
-    <model-viewer src="guitar.glb" ios-src="finale.reality" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls camera-orbit="0deg 45deg 2m" alt="A 3D model carousel">
-      <button slot="ar-button" id="ar-button-tab1">
-        View in your space
-      </button>
-      <div id="ar-prompt-tab1">
-        <img src="assets/hand.png">
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/temp.png" alt="Richard hanrick" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Sadashiva Yalla">Sadashiva Yalla</h1>
+
+          <p class="title">Computer Science Enthusiast</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
       </div>
-      <button id="ar-failure-tab1">
-        AR is not tracking!
-      </button>
-    </model-viewer>
-  </div>
-  
-  <input type="radio" id="tab2" name="tabs" class="tab">
-  <label for="tab2">Tab 2</label>
-  
-  <div class="tab-content">
-    <model-viewer src="blue.glb" ios-src="blue.reality" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls camera-orbit="0deg 45deg 2m" alt="A 3D model carousel">
-      <button slot="ar-button" id="ar-button-tab2">
-        View in your space
-      </button>
-      <div id="ar-prompt-tab2">
-        <img src="assets/hand.png">
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:syalla@cs.stonybrook.edu" class="contact-link">syalla@cs.stonybrook.edu</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+12133522795" class="contact-link">+1 (518) 982-9853</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="1982-06-23">July 17, 2002</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>New York, USA</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/sadashiva-yalla/" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://github.com/s-yalla/" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="mailto:syalla@cs.stonybrook.edu" class="social-link">
+              <ion-icon name="mail-outline"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
       </div>
-      <button id="ar-failure-tab2">
-        AR is not tracking!
-      </button>
-    </model-viewer>
-  </div>
-  
-  
-<style>
-  /* This keeps child nodes hidden while the element loads */
-  :not(:defined) > * {
-    display: none;
-  }
 
-  model-viewer {
-    background-color: #eee;
-    overflow-x: hidden;
-    --poster-color: #eee;
-  }
+    </aside>
 
-  #ar-button {
-    background-image: url(assets/ic_view_in_ar_new_googblue_48dp.png);
-    background-repeat: no-repeat;
-    background-size: 40px 40px;
-    background-position: 12px 50%;
-    background-color: #fff;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    bottom: 132px;
-    padding: 0px 16px 0px 60px;
-    font-family: Roboto Regular, Helvetica Neue, sans-serif;
-    font-size: 40px;
-    color:#4285f4;
-    height: 60px;
-    line-height: 36px;
-    border-radius: 10px;
-    border: 1px solid #DADCE0;
-  }
-  
 
-  #ar-button:active {
-    background-color: #E8EAED;
-  }
 
-  #ar-button:focus {
-    outline: none;
-  }
 
-  #ar-button:focus-visible {
-    outline: 1px solid #4285f4;
-  }
 
-  @keyframes circle {
-    from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
-    to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
-  }
+    <!--
+      - #main-content
+    -->
 
-  @keyframes elongate {
-    from { transform: translateX(100px); }
-    to   { transform: translateX(-100px); }
-  }
+    <div class="main-content">
 
-  model-viewer > #ar-prompt {
-    position: absolute;
-    left: 50%;
-    bottom: 175px;
-    animation: elongate 2s infinite ease-in-out alternate;
-    display: none;
-  }
+      <!--
+        - #NAVBAR
+      -->
 
-  model-viewer[ar-status="session-started"] > #ar-prompt {
-    display: block;
-  }
+      <nav class="navbar">
 
-  model-viewer > #ar-prompt > img {
-    animation: circle 4s linear infinite;
-  }
+        <ul class="navbar-list">
 
-  model-viewer > #ar-failure {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 175px;
-    display: none;
-  }
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
 
-  model-viewer[ar-tracking="not-tracking"] > #ar-failure {
-    display: block;
-  }
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
 
-  .slider {
-    width: 100%;
-    text-align: center;
-    overflow: hidden;
-    position: absolute;
-    bottom: 16px;
-  }
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Projects</button>
+          </li>
 
-  .slides {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-  }
+          
 
-  .slide {
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #fff;
-    margin-right: 10px;
-    border-radius: 10px;
-    border: none;
-    display: flex;
-  }
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
 
-  .slide.selected {
-    border: 2px solid #4285f4;
-  }
+        </ul>
 
-  .slide:focus {
-    outline: none;
-  }
+      </nav>
 
-  .slide:focus-visible {
-    outline: 1px solid #4285f4;
-  }
 
-</style>
 
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            Hi there! I'm a junior studying Computer Science at Stony Brook University, and I have a particular interest in software engineering, computer vision, and machine learning. I am fascinated by the potential of these fields to transform the way we interact with technology and the world around us.
+
+            I have already taken several courses in programming, data structures, and algorithms, and I have been involved in several projects related to computer vision and machine learning. I am constantly seeking to expand my knowledge and skills in these areas, and I hope to do more research and development in these fields in the future.
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm Interested in</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Machine Learning</h4>
+
+                <p class="service-item-text">
+                  Machine Learning and its applications are almost limitless and being able to apply them is the next phase in the field of computer science.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web development</h4>
+
+                <p class="service-item-text">
+                  I am really interested in the field of web development and creating websites which can interact with the public on a large scale.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Mobile apps</h4>
+
+                <p class="service-item-text">
+                  I am also quite intrigued by iOS and Android Development as it is another way to connect with clients as a software engineer.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Computer Vision</h4>
+
+                <p class="service-item-text">
+                  I really like this field as I can apply it to so many real world applications. I hope to have more experience in this field in the near future.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials
+        -->
+
+      
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+              <time datetime="2021-06-14">14 June, 2021</time>
+
+              <div data-modal-text>
+                <p>
+                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+        <!--
+          - clients
+        -->
+
+        
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Stony Brook University</h4>
+
+              <span>2020 — 2024</span>
+
+              <p class="timeline-text">
+                <b>Bachelor of Science in Computer Science Stony Brook, NY</b> 
+                <p class="timeline-text"><b>Courses: </b>Software Development, Analysis Of Algorithms, Systems Fundamentals, Software Security, Computer Networks, Programming Abstractions, Medical Imaging, Data Structures and Algorithms, Probability Theory, and Linear Algebra</p>
+                <p class="timeline-text"><b>Courses: </b>Extracurriculars: Stony Brook Computing Society, Cybersecurity Club, Competitive Programming Club, Debate Club, Chess Club, Colorstack, WICS, and Cricket Club</p>
+              </p>
+
+            </li>
+
+            
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Software Developer</h4>
+
+              <span>Stony Brook University (Sep. 2022 — Present) </span>
+
+              <p class="timeline-text"> • Creating web and mobile based applications for local non profit organizations under Prof. Scarlatos. </p>
+              <p class="timeline-text"> • Ongoing projects include inventory management, encrypted login portals, and Interactive 3D Tours.</p> 
+              <p class="timeline-text"> • Performing research and fieldwork on clients’ workflow to improve the product development process.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Undergraduate Research Assistant</h4>
+
+              <span>Stony Brook University (Aug 2022 – Present)</span>
+
+              <p class="timeline-text">
+                • Researching Decentralized Modular Architecture for Live Video Analytics through Edge Computing.
+              </p>
+              <p class="timeline-text">
+                • Investigating the efficiency of utilizing mobile cameras such as car dash-cams, drones, and smartphones for video
+                analytics rather than depending on a hierarchy of clusters in a network.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Undergraduate Teaching Assistant</h4>
+
+              <span>Stony Brook University (Aug 2022 – Present)</span>
+
+              <p class="timeline-text">
+                • Created assignments and labs for CSE 114(Intro to Object Oriented Programming).
+                <p class="timeline-text">
+                • Delivered assistance to students in lectures of approximately 200 students.</p>
+                <p class="timeline-text">
+                • Graded assignments and held biweekly lab hours and office hours.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Languages:</h5>
+                <p class="timeline-text">Java, Python, C++, mySQL, C#, JavaScript, HTML/CSS</p>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Frameworks:</h5>
+                <p class="timeline-text">React, Node.js, Express.js, Django, Flask</p>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Dev. Tools:</h5>
+                <p class="timeline-text">Git, Docker, MongoDB, Google Colab, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse</p>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Libraries:</h5>
+                <p class="timeline-text">NumPy, Matplotlib, YOLOv7, OpenCV, TensorFlow, OpenPose, HRnet, DeepPose, MediaPipe</p>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Notable:</h5>
+                <p class="timeline-text">Award Winner at CEWIT Hacks 2023 </p>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <a href="https://www.dropbox.com/s/71rf7d8bqirgdqs/Sadashiva_Resume_Final.pdf?dl=1" download style="color:white;">Download Resume</a>
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="projects" data-page="projects">
+
+        <header>
+          <h2 class="h2 article-title">Projects</h2>
+        </header>
+
+        <section class="projects">
+
+         
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-1.png" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Theory of Complexity Research Tool</h3>
+
+                <p class="project-category">
+                  • Designing a Tool to make the process of complexity research effortless under the supervision of Dr. Podder.</p>
+                <p class="project-category">
+                    • Developing a program to match the relations of the 500+ classes discovered, in an efficient and scalable method.</p>
+                <p class="project-category">
+                    • Utilizing Django for the front-end framework, MySQL for the database and Matplotlib/Plotly for Visualization.
+                </p>
+              </a>
+            </li>
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Playlister Application</h3>
+
+                <p class="project-category">
+                  • An application for creating, editing and playing playlists of YouTube music videos.</p>
+                <p class="project-category">
+                  • Allows users to share those playlists for others to play and comment on the same platform as well.</p>
+                <p class="project-category">
+                  • Includes a built-in YouTube player and will allow users to find others’ playlists via multiple search criteria.
+                </p>
+              </a>
+            </li>
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-3.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Automatic Speech Recognition Tools</h3>
+
+                <p class="project-category">
+                  • Podcast Summarization Application using AssemblyAI integrated with a interactive front-end implementation. </p>
+                <p class="project-category">
+                  • Real Time Speech Recognition Tool integrated with a Virtual Assistant/Chatbot using AssemblyAI and Open AI.</p>
+              
+              </a>
+            </li>
+
+        
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-5.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">User Instructions</h3>
+
+                <p class="project-category">
+                  Created User Instructions for Computer Vision and the basics of Object/Face/Pose Detection.
+                  User Instructions for anyone not familiar with any computer vision to increase their knowledge.
+                </p>
+              </a>
+            </li>
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-4.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Press Release</h3>
+
+                <p class="project-category">
+                  Created a Press Release for the CSE 300 Class about Hack@CEWIT at SBU on March 3rd 2023.
+                </p>
+              </a>
+            </li>
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-6.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Collaborative Problem Solving Project</h3>
+
+                <p class="project-category">
+                  Created a presenation on the issues that are currently existing in the Stony Brook CS Curriculum. Our solution was on adding more recitation sections to tough CS classes like CSE 320/373/316.
+               </p>
+              
+              </a>
+            </li>
+
+
+
+            
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #BLOG
+      -->
+
+      
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.032819536543!2d-73.98542848459656!3d40.74881767932762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1619523116257!5m2!1sen!2s"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
-</html>
 
+</html>
