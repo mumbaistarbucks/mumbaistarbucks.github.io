@@ -21,14 +21,20 @@
             --accent: #06b6d4;
             --accent-pink: #ec4899;
             --accent-orange: #f97316;
-            --bg-dark: #0a0a0f;
-            --bg-card: rgba(255, 255, 255, 0.03);
-            --bg-card-hover: rgba(255, 255, 255, 0.06);
-            --text-primary: #ffffff;
-            --text-secondary: rgba(255, 255, 255, 0.7);
-            --text-tertiary: rgba(255, 255, 255, 0.5);
-            --border: rgba(255, 255, 255, 0.1);
-            --glow: 0 0 60px rgba(99, 102, 241, 0.3);
+            --bg-light: #ffffff;
+            --bg-subtle: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f1f5f9;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-tertiary: #64748b;
+            --border: rgba(0, 0, 0, 0.08);
+            --border-strong: rgba(0, 0, 0, 0.12);
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            --glow: 0 0 60px rgba(99, 102, 241, 0.2);
         }
 
         html {
@@ -37,7 +43,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-dark);
+            background: var(--bg-light);
             color: var(--text-primary);
             overflow-x: hidden;
             line-height: 1.6;
@@ -51,8 +57,8 @@
             width: 100%;
             height: 100%;
             background-image:
-                linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
             background-size: 60px 60px;
             pointer-events: none;
             z-index: 0;
@@ -65,9 +71,9 @@
             width: 100%;
             height: 100%;
             background:
-                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.15), transparent),
-                radial-gradient(ellipse 60% 40% at 80% 50%, rgba(6, 182, 212, 0.1), transparent),
-                radial-gradient(ellipse 60% 40% at 20% 80%, rgba(236, 72, 153, 0.1), transparent);
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.12), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 50%, rgba(6, 182, 212, 0.08), transparent),
+                radial-gradient(ellipse 60% 40% at 20% 80%, rgba(236, 72, 153, 0.08), transparent);
             pointer-events: none;
             z-index: 0;
         }
@@ -85,7 +91,7 @@
         .orb-1 {
             width: 600px;
             height: 600px;
-            background: rgba(99, 102, 241, 0.15);
+            background: rgba(99, 102, 241, 0.12);
             top: -200px;
             left: -200px;
             animation-delay: 0s;
@@ -94,7 +100,7 @@
         .orb-2 {
             width: 500px;
             height: 500px;
-            background: rgba(6, 182, 212, 0.12);
+            background: rgba(6, 182, 212, 0.1);
             top: 50%;
             right: -150px;
             animation-delay: -5s;
@@ -103,7 +109,7 @@
         .orb-3 {
             width: 400px;
             height: 400px;
-            background: rgba(236, 72, 153, 0.1);
+            background: rgba(236, 72, 153, 0.08);
             bottom: -100px;
             left: 30%;
             animation-delay: -10s;
@@ -128,14 +134,15 @@
             justify-content: space-between;
             align-items: center;
             backdrop-filter: blur(20px);
-            background: rgba(10, 10, 15, 0.8);
+            background: rgba(255, 255, 255, 0.8);
             border-bottom: 1px solid var(--border);
             transition: all 0.3s ease;
         }
 
         nav.scrolled {
             padding: 15px 40px;
-            background: rgba(10, 10, 15, 0.95);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-md);
         }
 
         .logo {
@@ -145,6 +152,7 @@
             font-weight: 800;
             font-size: 1.5rem;
             letter-spacing: -0.5px;
+            color: var(--text-primary);
         }
 
         .logo-icon {
@@ -157,7 +165,8 @@
             justify-content: center;
             font-weight: 900;
             font-size: 1.2rem;
-            box-shadow: var(--glow);
+            color: white;
+            box-shadow: var(--shadow-md);
         }
 
         .nav-links {
@@ -221,7 +230,7 @@
 
         .btn-ghost:hover {
             color: var(--text-primary);
-            background: var(--bg-card);
+            background: var(--bg-card-hover);
         }
 
         .btn-primary {
@@ -238,7 +247,7 @@
         .btn-secondary {
             background: var(--bg-card);
             color: var(--text-primary);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-strong);
         }
 
         .btn-secondary:hover {
@@ -277,6 +286,8 @@
             margin-bottom: 30px;
             animation: fadeInUp 0.8s ease forwards;
             opacity: 0;
+            box-shadow: var(--shadow-sm);
+            color: var(--text-secondary);
         }
 
         .hero-badge-dot {
@@ -300,10 +311,11 @@
             margin-bottom: 24px;
             animation: fadeInUp 0.8s ease 0.1s forwards;
             opacity: 0;
+            color: var(--text-primary);
         }
 
         .hero-title .gradient-text {
-            background: linear-gradient(135deg, var(--primary-light), var(--accent), var(--accent-pink));
+            background: linear-gradient(135deg, var(--primary), var(--accent), var(--accent-pink));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -345,12 +357,13 @@
         }
 
         .hero-visual-inner {
-            background: linear-gradient(180deg, var(--bg-card), transparent);
+            background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 20px;
             padding: 4px;
             position: relative;
             overflow: hidden;
+            box-shadow: var(--shadow-xl);
         }
 
         .hero-visual-inner::before {
@@ -364,7 +377,7 @@
         }
 
         .dashboard-preview {
-            background: linear-gradient(180deg, rgba(20, 20, 30, 0.9), rgba(10, 10, 15, 0.95));
+            background: linear-gradient(180deg, #f8fafc, #ffffff);
             border-radius: 16px;
             padding: 20px;
             min-height: 500px;
@@ -384,6 +397,7 @@
         .dashboard-title {
             font-weight: 700;
             font-size: 1.1rem;
+            color: var(--text-primary);
         }
 
         .dashboard-dots {
@@ -415,6 +429,7 @@
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
         }
 
         .agent-card::before {
@@ -436,7 +451,7 @@
         .agent-card:hover {
             transform: translateY(-5px);
             border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: var(--shadow-lg);
         }
 
         .agent-status {
@@ -466,6 +481,7 @@
             font-weight: 600;
             font-size: 0.95rem;
             margin-bottom: 8px;
+            color: var(--text-primary);
         }
 
         .agent-task {
@@ -484,11 +500,12 @@
 
         .metric {
             font-size: 0.8rem;
+            color: var(--text-secondary);
         }
 
         .metric-value {
             font-weight: 600;
-            color: var(--accent);
+            color: var(--primary);
         }
 
         /* Connection Lines Animation */
@@ -499,7 +516,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            opacity: 0.3;
+            opacity: 0.4;
         }
 
         .connection-line {
@@ -516,20 +533,20 @@
 
         /* Floating particles */
         .particles {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
             pointer-events: none;
+            z-index: 0;
         }
 
         .particle {
             position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--primary);
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
             opacity: 0;
             animation: particle-float 15s linear infinite;
@@ -541,10 +558,10 @@
                 transform: translateY(100vh) scale(0);
             }
             10% {
-                opacity: 1;
+                opacity: 0.6;
             }
             90% {
-                opacity: 1;
+                opacity: 0.6;
             }
             100% {
                 opacity: 0;
@@ -585,18 +602,19 @@
             border: 1px solid var(--border);
             border-radius: 20px;
             transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
         }
 
         .stat-item:hover {
             transform: translateY(-10px);
             border-color: var(--primary);
-            box-shadow: var(--glow);
+            box-shadow: var(--shadow-xl);
         }
 
         .stat-number {
             font-size: 3.5rem;
             font-weight: 900;
-            background: linear-gradient(135deg, var(--primary-light), var(--accent));
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -614,6 +632,7 @@
             padding: 120px 20px;
             position: relative;
             z-index: 1;
+            background: var(--bg-subtle);
         }
 
         .section-header {
@@ -625,12 +644,12 @@
         .section-badge {
             display: inline-block;
             padding: 8px 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.1));
+            border: 1px solid rgba(99, 102, 241, 0.2);
             border-radius: 100px;
             font-size: 0.85rem;
             font-weight: 600;
-            color: var(--primary-light);
+            color: var(--primary);
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -642,6 +661,7 @@
             letter-spacing: -2px;
             margin-bottom: 20px;
             line-height: 1.2;
+            color: var(--text-primary);
         }
 
         .section-subtitle {
@@ -667,6 +687,7 @@
             overflow: hidden;
             transition: all 0.4s ease;
             cursor: pointer;
+            box-shadow: var(--shadow-sm);
         }
 
         .feature-card::before {
@@ -676,7 +697,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), transparent);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), transparent);
             opacity: 0;
             transition: opacity 0.4s ease;
         }
@@ -688,7 +709,7 @@
         .feature-card:hover {
             transform: translateY(-10px);
             border-color: var(--primary);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: var(--shadow-xl);
         }
 
         .feature-icon {
@@ -708,6 +729,7 @@
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 15px;
+            color: var(--text-primary);
         }
 
         .feature-description {
@@ -739,11 +761,13 @@
             position: relative;
             overflow: hidden;
             transition: all 0.4s ease;
+            box-shadow: var(--shadow-sm);
         }
 
         .bento-item:hover {
             border-color: var(--primary);
             transform: scale(1.02);
+            box-shadow: var(--shadow-lg);
         }
 
         .bento-item-1 {
@@ -771,6 +795,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 15px;
+            color: var(--text-primary);
         }
 
         .bento-description {
@@ -780,8 +805,8 @@
 
         /* Code Block */
         .code-block {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--border);
+            background: #1e293b;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             padding: 20px;
             font-family: 'JetBrains Mono', monospace;
@@ -792,13 +817,14 @@
         .code-line {
             display: block;
             padding: 2px 0;
+            color: #e2e8f0;
         }
 
-        .code-keyword { color: var(--accent-pink); }
-        .code-function { color: var(--primary-light); }
-        .code-string { color: #22c55e; }
-        .code-comment { color: var(--text-tertiary); }
-        .code-number { color: var(--accent-orange); }
+        .code-keyword { color: #f472b6; }
+        .code-function { color: #818cf8; }
+        .code-string { color: #4ade80; }
+        .code-comment { color: #64748b; }
+        .code-number { color: #fb923c; }
 
         /* Workflow Animation */
         .workflow-visual {
@@ -812,13 +838,15 @@
         .workflow-node {
             width: 80px;
             height: 80px;
-            background: var(--bg-card-hover);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.1));
             border: 2px solid var(--border);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
             transition: all 0.3s ease;
             animation: node-pulse 3s ease-in-out infinite;
         }
@@ -829,7 +857,7 @@
 
         @keyframes node-pulse {
             0%, 100% { transform: scale(1); border-color: var(--border); }
-            50% { transform: scale(1.1); border-color: var(--primary); box-shadow: var(--glow); }
+            50% { transform: scale(1.1); border-color: var(--primary); box-shadow: var(--shadow-lg); }
         }
 
         .workflow-arrow {
@@ -848,6 +876,7 @@
             padding: 120px 20px;
             position: relative;
             z-index: 1;
+            background: var(--bg-subtle);
         }
 
         .testimonials-grid {
@@ -864,11 +893,13 @@
             border-radius: 20px;
             padding: 40px;
             transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
         }
 
         .testimonial-card:hover {
             transform: translateY(-5px);
             border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
         }
 
         .testimonial-content {
@@ -894,11 +925,13 @@
             justify-content: center;
             font-weight: 700;
             font-size: 1.1rem;
+            color: white;
         }
 
         .testimonial-name {
             font-weight: 600;
             margin-bottom: 4px;
+            color: var(--text-primary);
         }
 
         .testimonial-role {
@@ -929,17 +962,19 @@
             padding: 40px;
             position: relative;
             transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
         }
 
         .pricing-card:hover {
             transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
         }
 
         .pricing-card.featured {
-            background: linear-gradient(180deg, rgba(99, 102, 241, 0.1), var(--bg-card));
+            background: linear-gradient(180deg, rgba(99, 102, 241, 0.05), var(--bg-card));
             border-color: var(--primary);
             transform: scale(1.05);
-            box-shadow: var(--glow);
+            box-shadow: var(--shadow-xl);
         }
 
         .pricing-card.featured:hover {
@@ -956,18 +991,21 @@
             border-radius: 100px;
             font-size: 0.8rem;
             font-weight: 600;
+            color: white;
         }
 
         .pricing-name {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 10px;
+            color: var(--text-primary);
         }
 
         .pricing-price {
             font-size: 3.5rem;
             font-weight: 900;
             margin-bottom: 5px;
+            color: var(--text-primary);
         }
 
         .pricing-price span {
@@ -1007,18 +1045,20 @@
             padding: 120px 20px;
             position: relative;
             z-index: 1;
+            background: var(--bg-subtle);
         }
 
         .cta-inner {
             max-width: 900px;
             margin: 0 auto;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(6, 182, 212, 0.1));
-            border: 1px solid var(--border);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.05));
+            border: 1px solid rgba(99, 102, 241, 0.2);
             border-radius: 32px;
             padding: 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
+            box-shadow: var(--shadow-lg);
         }
 
         .cta-inner::before {
@@ -1036,6 +1076,7 @@
             font-weight: 800;
             margin-bottom: 20px;
             letter-spacing: -1px;
+            color: var(--text-primary);
         }
 
         .cta-subtitle {
@@ -1059,6 +1100,7 @@
             position: relative;
             z-index: 1;
             border-top: 1px solid var(--border);
+            background: var(--bg-card);
         }
 
         .footer-inner {
@@ -1092,6 +1134,7 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: var(--text-primary);
         }
 
         .footer-links {
@@ -1109,7 +1152,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--text-primary);
+            color: var(--primary);
         }
 
         .footer-bottom {
@@ -1236,7 +1279,7 @@
             position: fixed;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
             pointer-events: none;
             z-index: 9999;
             transform: translate(-50%, -50%);
@@ -1256,6 +1299,7 @@
             border-bottom: 1px solid var(--border);
             position: relative;
             z-index: 1;
+            background: var(--bg-subtle);
         }
 
         .marquee {
@@ -1282,7 +1326,7 @@
         .marquee-item svg {
             width: 30px;
             height: 30px;
-            opacity: 0.5;
+            opacity: 0.6;
         }
 
         @keyframes marquee {
@@ -1308,13 +1352,13 @@
         .glitch::before {
             animation: glitch-1 0.3s infinite linear alternate-reverse;
             clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
-            -webkit-text-fill-color: var(--text-primary);
+            color: var(--text-primary);
         }
 
         .glitch::after {
             animation: glitch-2 0.3s infinite linear alternate-reverse;
             clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
-            -webkit-text-fill-color: var(--text-primary);
+            color: var(--text-primary);
         }
 
         @keyframes glitch-1 {
@@ -1327,23 +1371,42 @@
             100% { transform: translateX(-2px); }
         }
 
-        /* Typing animation */
-        .typing-text {
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 3px solid var(--primary);
-            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        /* Integration icons */
+        .integration-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
         }
 
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+        .integration-icon:hover {
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: var(--primary); }
+        /* Log lines */
+        .log-line {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
         }
+
+        .log-line:last-child {
+            border-bottom: none;
+        }
+
+        .log-info { color: #22c55e; }
+        .log-trace { color: var(--primary); }
+        .log-metric { color: #eab308; }
     </style>
 </head>
 <body>
@@ -1709,7 +1772,7 @@
                 <p class="bento-description">From 1 to 10,000 agents. Zero configuration. Instant elasticity.</p>
                 <div style="display: flex; align-items: center; justify-content: center; height: 150px;">
                     <svg width="120" height="120" viewBox="0 0 120 120">
-                        <circle cx="60" cy="60" r="50" fill="none" stroke="var(--border)" stroke-width="8"/>
+                        <circle cx="60" cy="60" r="50" fill="none" stroke="#e2e8f0" stroke-width="8"/>
                         <circle cx="60" cy="60" r="50" fill="none" stroke="url(#progressGradient)" stroke-width="8"
                                 stroke-dasharray="314" stroke-dashoffset="60" stroke-linecap="round"
                                 style="transform: rotate(-90deg); transform-origin: center; animation: progress-fill 2s ease-out forwards;"/>
@@ -1719,7 +1782,7 @@
                                 <stop offset="100%" style="stop-color:#06b6d4"/>
                             </linearGradient>
                         </defs>
-                        <text x="60" y="65" text-anchor="middle" fill="white" font-size="20" font-weight="700">81%</text>
+                        <text x="60" y="65" text-anchor="middle" fill="#0f172a" font-size="20" font-weight="700">81%</text>
                     </svg>
                 </div>
             </div>
@@ -1738,25 +1801,25 @@
                 <h3 class="bento-title">Powerful Integrations</h3>
                 <p class="bento-description">Connect to 100+ services out of the box. Slack, GitHub, Jira, and more.</p>
                 <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
-                    <div style="width: 50px; height: 50px; background: var(--bg-card-hover); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700;">GH</div>
-                    <div style="width: 50px; height: 50px; background: var(--bg-card-hover); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700;">SL</div>
-                    <div style="width: 50px; height: 50px; background: var(--bg-card-hover); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700;">JR</div>
-                    <div style="width: 50px; height: 50px; background: var(--bg-card-hover); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700;">NT</div>
-                    <div style="width: 50px; height: 50px; background: var(--bg-card-hover); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700;">+96</div>
+                    <div class="integration-icon">GH</div>
+                    <div class="integration-icon">SL</div>
+                    <div class="integration-icon">JR</div>
+                    <div class="integration-icon">NT</div>
+                    <div class="integration-icon">+96</div>
                 </div>
             </div>
             <div class="bento-item bento-item-5 reveal">
                 <h3 class="bento-title">Complete Observability</h3>
                 <p class="bento-description">Every action, every decision, fully traced and auditable.</p>
-                <div style="margin-top: 20px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text-tertiary);">
-                    <div style="padding: 8px 0; border-bottom: 1px solid var(--border);">
-                        <span style="color: #22c55e;">[INFO]</span> Agent-042 completed task #1847
+                <div style="margin-top: 20px;">
+                    <div class="log-line">
+                        <span class="log-info">[INFO]</span> Agent-042 completed task #1847
                     </div>
-                    <div style="padding: 8px 0; border-bottom: 1px solid var(--border);">
-                        <span style="color: #6366f1;">[TRACE]</span> Handoff to Agent-108
+                    <div class="log-line">
+                        <span class="log-trace">[TRACE]</span> Handoff to Agent-108
                     </div>
-                    <div style="padding: 8px 0;">
-                        <span style="color: #eab308;">[METRIC]</span> Latency: 23ms | Tokens: 1.2k
+                    <div class="log-line">
+                        <span class="log-metric">[METRIC]</span> Latency: 23ms | Tokens: 1.2k
                     </div>
                 </div>
             </div>
