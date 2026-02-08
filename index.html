@@ -16,7 +16,6 @@ radial-gradient(at 100% 0%, hsla(0, 40%, 90%, 0.5) 0, transparent 50%),
 radial-gradient(at 100% 100%, hsla(30, 30%, 92%, 0.6) 0, transparent 50%),
 radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
 }
-/* Custom Scrollbar */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #cfc7c0; border-radius: 3px; }
@@ -25,7 +24,6 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Bricolage+Grotesque:wght@400;500;600&amp;display=swap" rel="stylesheet">
-
 <style id="all-fonts-style-font-google-sans-flex">.font-google-sans-flex { font-family: 'Google Sans Flex', sans-serif !important; }</style></head>
 <body class="overflow-x-hidden antialiased text-neutral-900 bg-[#e3ddd7]">
 
@@ -68,7 +66,7 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
     <h1 class="text-5xl md:text-7xl tracking-tight text-[#1B3139] mb-6 max-w-5xl mx-auto leading-[1.1] font-google-sans-flex font-normal">
       The Control &amp; Coordination Plane for <span class="text-[#8B0000] font-google-sans-flex font-normal">Multi-Agent</span> Systems</h1>
     <p class="text-lg md:text-xl text-neutral-600 mb-10 max-w-2xl mx-auto leading-relaxed font-sans">
-        Agents need guardrails. Splinter enforces budgets, limits, and safety rules on every agent action. It coordinates shared state, handoffs, and execution order so your swarm doesn't eat itself alive.
+        Autonomous agents without constraints will drain your budget, overwrite shared state, and loop forever. Splinter is the enforcement layer that makes multi-agent systems actually work.
     </p>
 
     <div class="flex flex-col sm:flex-row gap-4 mb-20 items-center justify-center w-full max-w-2xl mx-auto">
@@ -96,7 +94,7 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
     <div class="flex items-center gap-3">
         <div class="flex items-center gap-2 px-3 py-1.5 bg-[#f9fafb] text-neutral-600 rounded-md border border-neutral-200">
             <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-            <span class="text-xs font-bold uppercase tracking-wider font-sans">3 Agents Active</span>
+            <span class="text-xs font-bold uppercase tracking-wider font-sans">3 Agents Running</span>
         </div>
         <h2 class="text-lg font-semibold text-[#1B3139] tracking-tight font-sans">Splinter Control Panel</h2>
     </div>
@@ -110,7 +108,7 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
       </div>
       <button class="px-3 py-1.5 bg-red-50 text-red-700 rounded-md border border-red-200 text-xs font-bold uppercase tracking-wider font-sans flex items-center gap-1.5">
         <iconify-icon icon="solar:stop-circle-bold" width="14"></iconify-icon>
-        Circuit Breaker
+        Kill All
       </button>
     </div>
   </header>
@@ -119,7 +117,6 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
     <!-- Agent Sidebar -->
     <div class="w-64 bg-white border-r border-neutral-100 p-4 shrink-0 hidden md:block">
         <div class="text-xs font-bold uppercase tracking-wider text-neutral-400 mb-3 font-sans">Agents</div>
-        <!-- Agent 1 -->
         <div class="p-3 rounded-xl bg-[#f9fafb] border border-neutral-200 mb-2">
             <div class="flex items-center justify-between mb-2">
                 <span class="text-sm font-bold text-[#1B3139] font-sans">Planner</span>
@@ -131,10 +128,9 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
             </div>
             <div class="flex items-center gap-2 text-xs text-neutral-500 font-sans mt-1">
                 <iconify-icon icon="solar:wallet-money-linear" width="12"></iconify-icon>
-                Budget: 1,200 / 5,000 tokens
+                1,200 / 5,000 tokens
             </div>
         </div>
-        <!-- Agent 2 -->
         <div class="p-3 rounded-xl bg-[#8B0000]/5 border border-[#8B0000]/20 mb-2">
             <div class="flex items-center justify-between mb-2">
                 <span class="text-sm font-bold text-[#1B3139] font-sans">Executor</span>
@@ -142,14 +138,13 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
             </div>
             <div class="flex items-center gap-2 text-xs text-neutral-500 font-sans">
                 <iconify-icon icon="solar:lock-linear" width="12"></iconify-icon>
-                Waiting: Planner handoff
+                Reason: Planner handoff
             </div>
             <div class="flex items-center gap-2 text-xs text-neutral-500 font-sans mt-1">
                 <iconify-icon icon="solar:shield-check-linear" width="12"></iconify-icon>
                 Tools: fs.write, shell.exec
             </div>
         </div>
-        <!-- Agent 3 -->
         <div class="p-3 rounded-xl bg-[#f9fafb] border border-neutral-200 mb-2">
             <div class="flex items-center justify-between mb-2">
                 <span class="text-sm font-bold text-[#1B3139] font-sans">Reviewer</span>
@@ -157,11 +152,11 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
             </div>
             <div class="flex items-center gap-2 text-xs text-neutral-500 font-sans">
                 <iconify-icon icon="solar:eye-linear" width="12"></iconify-icon>
-                Chain-aware: sees Planner + Executor
+                Sees: Planner + Executor
             </div>
             <div class="flex items-center gap-2 text-xs text-neutral-500 font-sans mt-1">
                 <iconify-icon icon="solar:target-linear" width="12"></iconify-icon>
-                Goal: validate output matches spec
+                Goal: validate output
             </div>
         </div>
         <div class="mt-3 pt-3 border-t border-neutral-100">
@@ -176,15 +171,13 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
             </div>
         </div>
     </div>
-    <!-- Main Content -->
+    <!-- Main Content: Event Log -->
     <div class="w-full bg-[#f9fafb] p-6 overflow-y-auto">
-        <!-- Control Events -->
         <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden mb-4">
             <div class="px-6 py-4 border-b border-neutral-100 bg-[#f9fafb] flex justify-between items-center">
                 <h3 class="text-base font-bold text-[#1B3139] font-sans">Control &amp; Coordination Events</h3>
                 <span class="text-xs bg-white border border-neutral-200 px-3 py-1.5 rounded text-neutral-500 font-mono">Live</span>
             </div>
-             <!-- Event: Budget Warning -->
              <div class="grid grid-cols-12 gap-4 px-6 py-3.5 border-b border-neutral-100 items-center bg-amber-50/50">
                 <div class="col-span-2 text-sm font-mono text-neutral-500">10:42:12</div>
                 <div class="col-span-2 text-sm font-bold text-[#1B3139] font-sans">Planner</div>
@@ -196,7 +189,6 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                     <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-bold border border-amber-200 font-sans">WARN</span>
                 </div>
             </div>
-            <!-- Event: Tool Blocked -->
              <div class="grid grid-cols-12 gap-4 px-6 py-3.5 border-b border-neutral-100 items-center bg-[#8B0000]/5 border-l-2 border-l-[#8B0000]">
                 <div class="col-span-2 text-sm font-mono text-neutral-500">10:42:08</div>
                 <div class="col-span-2 text-sm font-bold text-[#1B3139] font-sans">Executor</div>
@@ -208,49 +200,45 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                     <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-red-50 text-red-700 text-xs font-bold border border-red-100 font-sans">BLOCKED</span>
                 </div>
             </div>
-            <!-- Event: Loop Detected -->
              <div class="grid grid-cols-12 gap-4 px-6 py-3.5 border-b border-neutral-100 items-center bg-[#8B0000]/5 border-l-2 border-l-[#8B0000]">
                 <div class="col-span-2 text-sm font-mono text-neutral-500">10:42:05</div>
                 <div class="col-span-2 text-sm font-bold text-[#1B3139] font-sans">Planner</div>
                 <div class="col-span-5 flex items-center gap-2">
                     <span class="px-2 py-0.5 rounded border border-purple-200 bg-purple-50 text-purple-700 text-xs font-bold uppercase">LOOP</span>
-                    <span class="text-sm font-medium text-neutral-700 truncate font-sans">Repeated action detected (3x) &mdash; loop broken, fail-closed</span>
+                    <span class="text-sm font-medium text-neutral-700 truncate font-sans">Repeated action (3x) &mdash; loop broken, fail-closed</span>
                 </div>
                 <div class="col-span-3 text-right">
                     <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-red-50 text-red-700 text-xs font-bold border border-red-100 font-sans">STOPPED</span>
                 </div>
             </div>
-            <!-- Event: Decision Enforced -->
              <div class="grid grid-cols-12 gap-4 px-6 py-3.5 border-b border-neutral-100 items-center hover:bg-neutral-50 transition-colors">
                 <div class="col-span-2 text-sm font-mono text-neutral-500">10:42:01</div>
                 <div class="col-span-2 text-sm font-bold text-[#1B3139] font-sans">Planner</div>
                 <div class="col-span-5 flex items-center gap-2">
                     <span class="px-2 py-0.5 rounded border border-blue-100 bg-blue-50 text-blue-700 text-xs font-bold uppercase">DECISION</span>
-                    <span class="text-sm font-medium text-neutral-700 truncate font-sans">Plan locked &mdash; agent cannot change its mind</span>
+                    <span class="text-sm font-medium text-neutral-700 truncate font-sans">Plan locked &mdash; agent cannot reverse this decision</span>
                 </div>
                 <div class="col-span-3 text-right">
                     <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-100 font-sans">ENFORCED</span>
                 </div>
             </div>
-            <!-- Event: Snapshot + Handoff -->
              <div class="grid grid-cols-12 gap-4 px-6 py-3.5 border-b border-neutral-100 items-center hover:bg-neutral-50 transition-colors">
                 <div class="col-span-2 text-sm font-mono text-neutral-500">10:41:58</div>
                 <div class="col-span-2 text-sm font-bold text-[#1B3139] font-sans">Planner</div>
                 <div class="col-span-5 flex items-center gap-2">
                     <span class="px-2 py-0.5 rounded border border-emerald-100 bg-emerald-50 text-emerald-700 text-xs font-bold uppercase">HANDOFF</span>
-                    <span class="text-sm font-medium text-neutral-700 truncate font-sans">Step complete &mdash; snapshot saved, handing off to Executor</span>
+                    <span class="text-sm font-medium text-neutral-700 truncate font-sans">Step complete &mdash; snapshot saved, handing to Executor</span>
                 </div>
                 <div class="col-span-3 text-right">
                     <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-100 font-sans">SYNCED</span>
                 </div>
             </div>
-            <!-- Event: Rate Limit -->
              <div class="grid grid-cols-12 gap-4 px-6 py-3.5 items-center hover:bg-neutral-50 transition-colors">
                 <div class="col-span-2 text-sm font-mono text-neutral-500">10:41:55</div>
                 <div class="col-span-2 text-sm font-bold text-[#1B3139] font-sans">Executor</div>
                 <div class="col-span-5 flex items-center gap-2">
                     <span class="px-2 py-0.5 rounded border border-orange-200 bg-orange-50 text-orange-700 text-xs font-bold uppercase">RATE</span>
-                    <span class="text-sm font-medium text-neutral-700 truncate font-sans">Rate limit: 3 calls/min to <span class="font-mono">shell.exec</span> &mdash; throttled</span>
+                    <span class="text-sm font-medium text-neutral-700 truncate font-sans">3 calls/min to <span class="font-mono">shell.exec</span> &mdash; throttled</span>
                 </div>
                 <div class="col-span-3 text-right">
                     <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-bold border border-amber-200 font-sans">THROTTLED</span>
@@ -275,7 +263,7 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                 The Control Layer. <br><span class="text-neutral-500">Hard limits for autonomous code.</span>
             </h2>
             <p class="text-lg md:text-xl text-neutral-700 max-w-2xl font-sans leading-relaxed">
-                Agents are probabilistic. Your infrastructure is not. The Control Layer wraps every agent with enforceable constraints&mdash;budgets, step limits, tool access, loop detection, rate limits, and circuit breakers. When an agent goes off the rails, Splinter stops it before damage is done.
+                Agents are probabilistic. Your infrastructure is not. The Control Layer wraps every agent with enforceable constraints&mdash;budgets, step limits, tool access, loop detection, rate limits, and circuit breakers. When something goes wrong, Splinter kills it before damage is done.
             </p>
         </div>
 
@@ -289,11 +277,10 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                     <div>
                         <h3 class="text-xl font-semibold text-[#1B3139] mb-2 font-sans">Budgets &amp; Limits</h3>
                         <p class="text-neutral-700 leading-relaxed text-base font-sans">
-                            Set hard caps on time, memory, token spend, and step count per agent. Assign per-tool budgets so a single expensive tool call can't drain your entire allocation. Configure threshold behavior to warn or stop when limits approach.
+                            Hard caps on time, memory, token spend, and step count per agent. Per-tool budgets so one expensive call can't drain your entire allocation. Threshold behavior configurable to warn or stop.
                         </p>
                     </div>
                 </div>
-
                 <div class="flex gap-5">
                     <div class="w-12 h-12 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200 text-[#8B0000] flex items-center justify-center shrink-0 shadow-sm">
                         <iconify-icon icon="solar:refresh-circle-bold-duotone" width="24"></iconify-icon>
@@ -301,11 +288,10 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                     <div>
                         <h3 class="text-xl font-semibold text-[#1B3139] mb-2 font-sans">Loop Detection &amp; Retry Strategy</h3>
                         <p class="text-neutral-700 leading-relaxed text-base font-sans">
-                            Detect when an agent is stuck repeating the same action and break the loop automatically. Configure retry strategies per tool&mdash;basic retries for transient failures, fail-closed for anything destructive.
+                            Detect when an agent repeats the same action and break the loop automatically. Retry strategies per tool&mdash;basic retries for transient failures, fail-closed for anything destructive.
                         </p>
                     </div>
                 </div>
-
                 <div class="flex gap-5">
                     <div class="w-12 h-12 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200 text-[#8B0000] flex items-center justify-center shrink-0 shadow-sm">
                         <iconify-icon icon="solar:shield-check-bold-duotone" width="24"></iconify-icon>
@@ -313,11 +299,10 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                     <div>
                         <h3 class="text-xl font-semibold text-[#1B3139] mb-2 font-sans">Tool Access &amp; Custom Rules</h3>
                         <p class="text-neutral-700 leading-relaxed text-base font-sans">
-                            Define exactly which tools each agent can access. Write custom rules to gate dangerous operations. Rate limit tools per agent so no single worker monopolizes shared resources.
+                            Define exactly which tools each agent can use. Write custom rules to gate dangerous operations. Rate limit per agent per tool so no single worker monopolizes shared resources.
                         </p>
                     </div>
                 </div>
-
                 <div class="flex gap-5">
                     <div class="w-12 h-12 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200 text-[#8B0000] flex items-center justify-center shrink-0 shadow-sm">
                         <iconify-icon icon="solar:lock-bold-duotone" width="24"></iconify-icon>
@@ -325,11 +310,10 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                     <div>
                         <h3 class="text-xl font-semibold text-[#1B3139] mb-2 font-sans">Decision Enforcement</h3>
                         <p class="text-neutral-700 leading-relaxed text-base font-sans">
-                            Once an agent makes an important decision, Splinter locks it. The agent cannot change its mind mid-execution. This prevents the "waffling agent" problem where plans get rewritten on every iteration.
+                            Once an agent makes an important decision, Splinter locks it. The agent cannot change its mind mid-execution. No more waffling where plans get rewritten on every iteration.
                         </p>
                     </div>
                 </div>
-
                 <div class="flex gap-5">
                     <div class="w-12 h-12 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200 text-[#8B0000] flex items-center justify-center shrink-0 shadow-sm">
                         <iconify-icon icon="solar:rewind-back-bold-duotone" width="24"></iconify-icon>
@@ -337,11 +321,10 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                     <div>
                         <h3 class="text-xl font-semibold text-[#1B3139] mb-2 font-sans">Snapshots &amp; Rollback</h3>
                         <p class="text-neutral-700 leading-relaxed text-base font-sans">
-                            Every action is snapshotted. If something goes wrong, roll back to the last safe checkpoint instantly. No need to restart the entire chain from scratch.
+                            Every action is snapshotted. If something goes wrong, roll back to the last safe checkpoint. No need to restart the entire chain from scratch.
                         </p>
                     </div>
                 </div>
-
                 <div class="flex gap-5">
                     <div class="w-12 h-12 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200 text-[#8B0000] flex items-center justify-center shrink-0 shadow-sm">
                         <iconify-icon icon="solar:danger-triangle-bold-duotone" width="24"></iconify-icon>
@@ -355,40 +338,110 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                 </div>
             </div>
 
-            <!-- Right: Code/Visual -->
-            <div class="relative bg-[#1B3139] rounded-[32px] p-8 border border-neutral-800 shadow-2xl lg:sticky lg:top-28">
-                <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
-                    <span class="text-sm font-mono text-neutral-400">splinter.control.ts</span>
-                    <div class="flex gap-1.5">
-                        <div class="w-2.5 h-2.5 rounded-full bg-red-500/20 border border-red-500/50"></div>
-                        <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/20 border border-yellow-500/50"></div>
-                        <div class="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/50"></div>
+            <!-- Right: Interactive Control Diagram -->
+            <div class="lg:sticky lg:top-28 space-y-4">
+                <!-- Agent with constraints visualized -->
+                <div class="bg-white rounded-[28px] border border-neutral-200 shadow-lg p-6">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-[#1B3139] text-white flex items-center justify-center">
+                                <iconify-icon icon="solar:user-bold" width="20"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-[#1B3139] font-sans">Executor Agent</div>
+                                <div class="text-xs text-neutral-400 font-mono">pid: agent_02x</div>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-100">RUNNING</span>
+                    </div>
+
+                    <!-- Constraint bars -->
+                    <div class="space-y-3 mb-5">
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-neutral-500 font-sans font-medium">Token Budget</span>
+                                <span class="font-mono text-[#1B3139]">3,200 / 5,000</span>
+                            </div>
+                            <div class="h-2 bg-neutral-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-amber-500 rounded-full" style="width:64%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-neutral-500 font-sans font-medium">Step Count</span>
+                                <span class="font-mono text-[#1B3139]">7 / 10</span>
+                            </div>
+                            <div class="h-2 bg-neutral-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#8B0000] rounded-full" style="width:70%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-neutral-500 font-sans font-medium">Time Elapsed</span>
+                                <span class="font-mono text-[#1B3139]">18s / 30s</span>
+                            </div>
+                            <div class="h-2 bg-neutral-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#1B3139] rounded-full" style="width:60%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tool access -->
+                    <div class="mb-5">
+                        <div class="text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2 font-sans">Allowed Tools</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-mono border border-emerald-100">fs.read</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-mono border border-emerald-100">fs.write</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-mono border border-emerald-100">shell.exec</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-red-50 text-red-600 text-xs font-mono border border-red-100 line-through">db.drop</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-red-50 text-red-600 text-xs font-mono border border-red-100 line-through">net.fetch</span>
+                        </div>
+                    </div>
+
+                    <!-- Rate limits -->
+                    <div class="mb-5">
+                        <div class="text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2 font-sans">Rate Limits</div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="bg-[#f9fafb] rounded-lg p-2.5 border border-neutral-100">
+                                <div class="text-xs font-mono text-[#1B3139] font-bold">shell.exec</div>
+                                <div class="text-[11px] text-neutral-500 font-sans">3 calls / min</div>
+                            </div>
+                            <div class="bg-[#f9fafb] rounded-lg p-2.5 border border-neutral-100">
+                                <div class="text-xs font-mono text-[#1B3139] font-bold">fs.write</div>
+                                <div class="text-[11px] text-neutral-500 font-sans">10 calls / min</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Safety rules -->
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded-lg bg-[#1B3139] text-white text-xs font-sans font-medium flex items-center gap-1.5">
+                            <iconify-icon icon="solar:lock-bold" width="12"></iconify-icon> Decision Lock: ON
+                        </span>
+                        <span class="px-2.5 py-1 rounded-lg bg-[#1B3139] text-white text-xs font-sans font-medium flex items-center gap-1.5">
+                            <iconify-icon icon="solar:refresh-circle-bold" width="12"></iconify-icon> Loop Detect: ON
+                        </span>
+                        <span class="px-2.5 py-1 rounded-lg bg-[#8B0000] text-white text-xs font-sans font-medium flex items-center gap-1.5">
+                            <iconify-icon icon="solar:danger-triangle-bold" width="12"></iconify-icon> Circuit Breaker: $5 max
+                        </span>
                     </div>
                 </div>
-                <div class="font-mono text-sm leading-relaxed">
-                    <div><span class="text-red-400">import</span> { <span class="text-blue-300">Splinter</span> } <span class="text-red-400">from</span> <span class="text-green-300">'@splinter/core'</span></div>
-                    <br>
-                    <div><span class="text-red-400">const</span> <span class="text-blue-300">agent</span> = <span class="text-yellow-300">Splinter</span>.<span class="text-yellow-300">agent</span>({</div>
-                    <div class="pl-4"><span class="text-blue-300">name</span>: <span class="text-green-300">'Executor'</span>,</div>
-                    <br>
-                    <div class="pl-4 text-neutral-500">// Hard limits</div>
-                    <div class="pl-4"><span class="text-blue-300">budget</span>: { <span class="text-blue-300">tokens</span>: <span class="text-orange-300">5000</span>, <span class="text-blue-300">time</span>: <span class="text-green-300">'30s'</span> },</div>
-                    <div class="pl-4"><span class="text-blue-300">maxSteps</span>: <span class="text-orange-300">10</span>,</div>
-                    <div class="pl-4"><span class="text-blue-300">budgetThreshold</span>: { <span class="text-blue-300">at</span>: <span class="text-orange-300">0.8</span>, <span class="text-blue-300">action</span>: <span class="text-green-300">'warn'</span> },</div>
-                    <br>
-                    <div class="pl-4 text-neutral-500">// Tool access &amp; rate limits</div>
-                    <div class="pl-4"><span class="text-blue-300">tools</span>: [<span class="text-green-300">'fs.read'</span>, <span class="text-green-300">'fs.write'</span>],</div>
-                    <div class="pl-4"><span class="text-blue-300">rateLimit</span>: { <span class="text-blue-300">tool</span>: <span class="text-green-300">'fs.write'</span>, <span class="text-blue-300">max</span>: <span class="text-orange-300">3</span>, <span class="text-blue-300">per</span>: <span class="text-green-300">'1m'</span> },</div>
-                    <br>
-                    <div class="pl-4 text-neutral-500">// Safety</div>
-                    <div class="pl-4"><span class="text-blue-300">loopDetection</span>: <span class="text-orange-300">true</span>,</div>
-                    <div class="pl-4"><span class="text-blue-300">retryStrategy</span>: <span class="text-green-300">'fail-closed'</span>,</div>
-                    <div class="pl-4"><span class="text-blue-300">decisionEnforcement</span>: <span class="text-orange-300">true</span>,</div>
-                    <div class="pl-4"><span class="text-blue-300">circuitBreaker</span>: {</div>
-                    <div class="pl-8"><span class="text-blue-300">trigger</span>: <span class="text-green-300">'spend &gt; $5'</span>,</div>
-                    <div class="pl-8"><span class="text-blue-300">action</span>: <span class="text-green-300">'halt-all'</span></div>
-                    <div class="pl-4">}</div>
-                    <div>})</div>
+
+                <!-- Snapshot row -->
+                <div class="bg-white rounded-2xl border border-neutral-200 shadow-sm p-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-[#f9fafb] border border-neutral-200 flex items-center justify-center text-neutral-500">
+                            <iconify-icon icon="solar:camera-bold" width="16"></iconify-icon>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-[#1B3139] font-sans">Snapshot #7</div>
+                            <div class="text-xs text-neutral-400 font-mono">2.4s ago &bull; 1.2KB state</div>
+                        </div>
+                    </div>
+                    <button class="px-3 py-1.5 bg-[#f9fafb] text-[#1B3139] rounded-lg border border-neutral-200 text-xs font-bold font-sans flex items-center gap-1.5 hover:bg-neutral-100 transition-colors">
+                        <iconify-icon icon="solar:rewind-back-bold" width="12"></iconify-icon>
+                        Rollback
+                    </button>
                 </div>
             </div>
         </div>
@@ -407,86 +460,117 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                 The Coordination Layer. <br><span class="text-neutral-500">Agents that know about each other.</span>
             </h2>
             <p class="text-lg md:text-xl text-neutral-700 max-w-2xl ml-auto font-sans leading-relaxed">
-                Multi-agent systems fail when agents act in isolation. The Coordination Layer gives every agent awareness of the chain&mdash;shared state with clear ownership, validated handoffs, sequential checkpoints, goal tracking, and explicit signals for when steps are done or why an agent is waiting.
+                Multi-agent systems fail when agents act in isolation. The Coordination Layer gives every agent awareness of the full chain&mdash;shared state with clear ownership, validated handoffs, sequential checkpoints, goal tracking, and explicit signals for when steps are done or why an agent is waiting.
             </p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <!-- Left: Visual/Diagram -->
-            <div class="order-2 lg:order-1 relative bg-[#ebe7e2] rounded-[32px] border border-neutral-200/60 shadow-inner overflow-hidden flex flex-col lg:sticky lg:top-28">
-                <div class="absolute inset-0 bg-[radial-gradient(#d4cec8_1px,transparent_1px)] [background-size:16px_16px] opacity-70"></div>
-
-                <div class="relative z-10 p-8">
-                    <!-- Pipeline Visualization -->
-                    <div class="text-xs font-bold uppercase tracking-wider text-neutral-400 mb-6 font-sans text-left">Sequential Pipeline &amp; Handoffs</div>
-
-                    <!-- Step 1: Planner -->
-                    <div class="flex items-start gap-4 mb-2">
-                        <div class="flex flex-col items-center">
-                            <div class="w-10 h-10 rounded-full bg-[#1B3139] text-white flex items-center justify-center text-sm font-bold">1</div>
-                            <div class="w-px h-8 bg-[#1B3139]/30"></div>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl border border-neutral-200 shadow-sm flex-1">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-sm font-bold text-[#1B3139] font-sans">Planner</span>
-                                <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-100">DONE</span>
+            <!-- Left: Coordination Diagram -->
+            <div class="order-2 lg:order-1 lg:sticky lg:top-28 space-y-4">
+                <!-- Shared State Table -->
+                <div class="bg-white rounded-[28px] border border-neutral-200 shadow-lg overflow-hidden">
+                    <div class="px-6 py-4 border-b border-neutral-100 bg-[#f9fafb]">
+                        <div class="text-xs font-bold uppercase tracking-wider text-neutral-400 font-sans">Shared State</div>
+                    </div>
+                    <div class="divide-y divide-neutral-100">
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+                                <span class="text-sm font-mono text-[#1B3139] font-bold">plan_output</span>
                             </div>
-                            <div class="text-xs text-neutral-500 font-sans mb-1">Completion signal: <span class="font-mono text-[#1B3139]">plan_finalized</span></div>
-                            <div class="text-xs text-neutral-500 font-sans">Owns: <span class="font-mono text-[#1B3139]">plan_output</span>, <span class="font-mono text-[#1B3139]">task_spec</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Handoff Arrow -->
-                    <div class="flex items-center gap-4 mb-2 pl-5">
-                        <div class="flex items-center gap-2 text-xs font-mono text-[#8B0000]">
-                            <iconify-icon icon="solar:arrow-down-linear" width="14"></iconify-icon>
-                            handoff validated &bull; schema check passed
-                        </div>
-                    </div>
-
-                    <!-- Step 2: Executor -->
-                    <div class="flex items-start gap-4 mb-2">
-                        <div class="flex flex-col items-center">
-                            <div class="w-10 h-10 rounded-full bg-[#1B3139] text-white flex items-center justify-center text-sm font-bold">2</div>
-                            <div class="w-px h-8 bg-[#1B3139]/30"></div>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl border border-neutral-200 shadow-sm flex-1">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-sm font-bold text-[#1B3139] font-sans">Executor</span>
-                                <span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 text-[10px] font-bold border border-blue-100">RUNNING</span>
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs text-neutral-500 font-sans">Owner:</span>
+                                <span class="px-2 py-0.5 rounded bg-[#f9fafb] text-xs font-bold text-[#1B3139] border border-neutral-200 font-sans">Planner</span>
+                                <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-100">LOCKED</span>
                             </div>
-                            <div class="text-xs text-neutral-500 font-sans mb-1">Sees: Planner history + plan_output</div>
-                            <div class="text-xs text-neutral-500 font-sans">Goal: execute plan, write exec_result</div>
                         </div>
-                    </div>
-
-                    <!-- Handoff Arrow -->
-                    <div class="flex items-center gap-4 mb-2 pl-5">
-                        <div class="flex items-center gap-2 text-xs font-mono text-neutral-400">
-                            <iconify-icon icon="solar:arrow-down-linear" width="14"></iconify-icon>
-                            waiting for completion signal...
-                        </div>
-                    </div>
-
-                    <!-- Step 3: Reviewer -->
-                    <div class="flex items-start gap-4 mb-6">
-                        <div class="flex flex-col items-center">
-                            <div class="w-10 h-10 rounded-full bg-neutral-300 text-white flex items-center justify-center text-sm font-bold">3</div>
-                        </div>
-                        <div class="bg-white/60 p-4 rounded-xl border border-neutral-200/60 flex-1">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-sm font-bold text-neutral-400 font-sans">Reviewer</span>
-                                <span class="px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-500 text-[10px] font-bold border border-neutral-200">WAITING</span>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 rounded-full bg-amber-500"></div>
+                                <span class="text-sm font-mono text-[#1B3139] font-bold">exec_result</span>
                             </div>
-                            <div class="text-xs text-neutral-400 font-sans mb-1">Waiting reason: Executor has not signaled completion</div>
-                            <div class="text-xs text-neutral-400 font-sans">Not eligible to act yet</div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs text-neutral-500 font-sans">Owner:</span>
+                                <span class="px-2 py-0.5 rounded bg-[#f9fafb] text-xs font-bold text-[#1B3139] border border-neutral-200 font-sans">Executor</span>
+                                <span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 text-[10px] font-bold border border-amber-100">WRITING</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-3 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 rounded-full bg-neutral-300"></div>
+                                <span class="text-sm font-mono text-neutral-400 font-bold">review_verdict</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs text-neutral-500 font-sans">Owner:</span>
+                                <span class="px-2 py-0.5 rounded bg-[#f9fafb] text-xs font-bold text-neutral-400 border border-neutral-200 font-sans">Reviewer</span>
+                                <span class="px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-400 text-[10px] font-bold border border-neutral-200">EMPTY</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white/50 backdrop-blur border-t border-neutral-200 p-4 text-xs font-mono text-neutral-500 flex justify-between">
-                    <span>CHECKPOINT: step_2 &bull; state saved</span>
-                    <span class="text-emerald-700">&#9679; SYNCED</span>
+                <!-- Pipeline Steps -->
+                <div class="bg-white rounded-[28px] border border-neutral-200 shadow-lg p-6">
+                    <div class="text-xs font-bold uppercase tracking-wider text-neutral-400 mb-4 font-sans">Pipeline Execution</div>
+
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shrink-0">
+                            <iconify-icon icon="solar:check-circle-bold" width="16"></iconify-icon>
+                        </div>
+                        <div class="flex-1 bg-emerald-50 border border-emerald-100 rounded-xl px-4 py-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-bold text-[#1B3139] font-sans">Planner</span>
+                                <span class="text-[10px] font-bold text-emerald-700 uppercase">Done &bull; signal: plan_finalized</span>
+                            </div>
+                            <div class="text-xs text-neutral-500 font-sans mt-1">Goal: break task into steps &bull; <span class="text-emerald-700 font-medium">validated</span></div>
+                        </div>
+                    </div>
+
+                    <div class="ml-4 mb-3 flex items-center gap-2 text-xs font-mono text-[#8B0000]">
+                        <iconify-icon icon="solar:arrow-down-linear" width="12"></iconify-icon>
+                        handoff &bull; schema validated &bull; checkpoint saved
+                    </div>
+
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-[#1B3139] text-white flex items-center justify-center text-xs font-bold shrink-0 animate-pulse">2</div>
+                        <div class="flex-1 bg-blue-50 border border-blue-100 rounded-xl px-4 py-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-bold text-[#1B3139] font-sans">Executor</span>
+                                <span class="text-[10px] font-bold text-blue-700 uppercase">Running &bull; step 3/8</span>
+                            </div>
+                            <div class="text-xs text-neutral-500 font-sans mt-1">Goal: execute plan &bull; Sees: Planner history + plan_output</div>
+                        </div>
+                    </div>
+
+                    <div class="ml-4 mb-3 flex items-center gap-2 text-xs font-mono text-neutral-300">
+                        <iconify-icon icon="solar:arrow-down-linear" width="12"></iconify-icon>
+                        waiting for completion signal...
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-neutral-200 text-neutral-400 flex items-center justify-center text-xs font-bold shrink-0">3</div>
+                        <div class="flex-1 bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-bold text-neutral-400 font-sans">Reviewer</span>
+                                <span class="text-[10px] font-bold text-neutral-400 uppercase">Waiting &bull; not eligible</span>
+                            </div>
+                            <div class="text-xs text-neutral-400 font-sans mt-1">Reason: Executor has not signaled completion</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Checkpoint bar -->
+                <div class="bg-white rounded-2xl border border-neutral-200 shadow-sm p-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700">
+                            <iconify-icon icon="solar:database-bold" width="16"></iconify-icon>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-[#1B3139] font-sans">Checkpoint: step_2</div>
+                            <div class="text-xs text-neutral-400 font-mono">state saved &bull; resumable</div>
+                        </div>
+                    </div>
+                    <span class="text-emerald-700 text-xs font-bold font-sans flex items-center gap-1">&#9679; SYNCED</span>
                 </div>
             </div>
 
@@ -499,11 +583,10 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                     <div>
                         <h3 class="text-xl font-semibold text-[#1B3139] mb-2 font-sans">Shared State &amp; Ownership</h3>
                         <p class="text-neutral-700 leading-relaxed text-base font-sans">
-                            Every piece of shared state has a designated owner. Splinter tracks who wrote what and prevents unauthorized overwrites. When Agent A owns <span class="font-mono text-sm">plan_output</span>, Agent B can read it but cannot modify it unless ownership is explicitly transferred.
+                            Every piece of shared state has a designated owner. Splinter tracks who wrote what and prevents unauthorized overwrites. Agent B can read <span class="font-mono text-sm">plan_output</span> but cannot modify it unless ownership is explicitly transferred.
                         </p>
                     </div>
                 </div>
-
                 <div class="flex gap-5">
                     <div class="w-12 h-12 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200/50 shadow-sm text-[#8B0000] flex items-center justify-center shrink-0">
                         <iconify-icon icon="solar:check-read-bold-duotone" width="24"></iconify-icon>
@@ -511,23 +594,21 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                     <div>
                         <h3 class="text-xl font-semibold text-[#1B3139] mb-2 font-sans">Handoff &amp; Schema Validation</h3>
                         <p class="text-neutral-700 leading-relaxed text-base font-sans">
-                            When one agent hands off to another, Splinter validates the handoff payload against a declared schema. No more passing malformed or incomplete context between agents. If validation fails, the handoff is rejected and the upstream agent is notified.
+                            When one agent hands off to another, Splinter validates the payload against a declared schema. If validation fails, the handoff is rejected and the upstream agent is notified. No more passing garbage context downstream.
                         </p>
                     </div>
                 </div>
-
                 <div class="flex gap-5">
                     <div class="w-12 h-12 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200/50 shadow-sm text-[#8B0000] flex items-center justify-center shrink-0">
                         <iconify-icon icon="solar:eye-bold-duotone" width="24"></iconify-icon>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold text-[#1B3139] mb-2 font-sans">Chain Awareness &amp; History Visibility</h3>
+                        <h3 class="text-xl font-semibold text-[#1B3139] mb-2 font-sans">Chain Awareness &amp; History</h3>
                         <p class="text-neutral-700 leading-relaxed text-base font-sans">
                             Every agent knows what came before it. Splinter injects the execution history of upstream agents so downstream workers have full context. No more agents operating blind in a pipeline they don't understand.
                         </p>
                     </div>
                 </div>
-
                 <div class="flex gap-5">
                     <div class="w-12 h-12 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200/50 shadow-sm text-[#8B0000] flex items-center justify-center shrink-0">
                         <iconify-icon icon="solar:target-bold-duotone" width="24"></iconify-icon>
@@ -535,11 +616,10 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                     <div>
                         <h3 class="text-xl font-semibold text-[#1B3139] mb-2 font-sans">Goal Awareness &amp; Validation</h3>
                         <p class="text-neutral-700 leading-relaxed text-base font-sans">
-                            Each agent has a declared goal. Splinter validates that the agent's output actually satisfies its stated objective before allowing it to mark the step as complete. Goals prevent agents from going off-task.
+                            Each agent has a declared goal. Splinter validates that the agent's output actually satisfies its stated objective before allowing the step to be marked complete. Goals prevent drift.
                         </p>
                     </div>
                 </div>
-
                 <div class="flex gap-5">
                     <div class="w-12 h-12 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200/50 shadow-sm text-[#8B0000] flex items-center justify-center shrink-0">
                         <iconify-icon icon="solar:traffic-economy-bold-duotone" width="24"></iconify-icon>
@@ -547,11 +627,10 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                     <div>
                         <h3 class="text-xl font-semibold text-[#1B3139] mb-2 font-sans">Action Eligibility &amp; Completion Signals</h3>
                         <p class="text-neutral-700 leading-relaxed text-base font-sans">
-                            Only the eligible agent can act at any moment. Steps must explicitly declare when they're done. When an agent is idle, it must declare what it's waiting for. No ambiguity, no race conditions, no silent stalls.
+                            Only the eligible agent can act at any moment. Steps must explicitly declare when they're done. Idle agents must declare what they're waiting for. No ambiguity, no race conditions, no silent stalls.
                         </p>
                     </div>
                 </div>
-
                 <div class="flex gap-5">
                     <div class="w-12 h-12 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200/50 shadow-sm text-[#8B0000] flex items-center justify-center shrink-0">
                         <iconify-icon icon="solar:download-square-bold-duotone" width="24"></iconify-icon>
@@ -559,7 +638,7 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                     <div>
                         <h3 class="text-xl font-semibold text-[#1B3139] mb-2 font-sans">Checkpointing &amp; Sequential Pipelines</h3>
                         <p class="text-neutral-700 leading-relaxed text-base font-sans">
-                            State is checkpointed at every pipeline step. If a downstream agent fails, resume from the last checkpoint instead of rerunning the entire chain. Sequential order is enforced&mdash;no step can run before its predecessor completes.
+                            State is checkpointed at every pipeline step. If a downstream agent fails, resume from the last checkpoint instead of rerunning everything. Sequential order is enforced&mdash;no step runs before its predecessor completes.
                         </p>
                     </div>
                 </div>
@@ -569,9 +648,7 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
 </section>
 
 <!-- SECTION 3: SPLINTER CLOUD (PAID) -->
-<section class="overflow-hidden bg-[#1B3139] pt-24 pb-24 relative">
-    <div class="absolute top-0 right-0 w-96 h-96 bg-[#8B0000]/10 blur-[120px]"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#8B0000]/5 blur-[120px]"></div>
+<section class="overflow-hidden bg-[#ebe7e2] border-y border-neutral-200/60 pt-24 pb-24 relative">
     <div class="z-10 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative">
         <div class="flex flex-col w-full mb-16 text-center">
             <div class="flex items-center gap-2 mb-6 justify-center">
@@ -579,71 +656,71 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                 <span class="uppercase text-xs font-bold text-[#8B0000] tracking-[0.2em] font-sans">SPLINTER CLOUD</span>
                 <span class="w-8 h-px bg-[#8B0000]"></span>
             </div>
-            <h2 class="md:text-5xl lg:text-6xl text-4xl text-white tracking-tight font-google-sans-flex font-normal max-w-4xl mx-auto mb-6">
+            <h2 class="md:text-5xl lg:text-6xl text-4xl text-[#1B3139] tracking-tight font-google-sans-flex font-normal max-w-4xl mx-auto mb-6">
                 Live control. <span class="text-[#8B0000]">Real-time visibility.</span>
             </h2>
-            <p class="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto font-sans leading-relaxed">
-                The open source core gives you safety. Splinter Cloud gives you a live dashboard to see your agents, intervene in real time, and detect coordination failures before they cascade.
+            <p class="text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto font-sans leading-relaxed">
+                The open source core enforces rules at runtime. Splinter Cloud gives you a live dashboard to see your agents, intervene in real time, and detect coordination failures before they cascade.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Paid Control Features -->
-            <div class="bg-white/5 backdrop-blur border border-white/10 rounded-[32px] p-8">
+            <div class="bg-white border border-neutral-200 rounded-[32px] p-8 shadow-sm">
                 <div class="flex items-center gap-3 mb-8">
-                    <div class="w-10 h-10 rounded-xl bg-[#8B0000]/20 text-[#8B0000] flex items-center justify-center">
+                    <div class="w-10 h-10 rounded-xl bg-[#8B0000]/10 text-[#8B0000] flex items-center justify-center">
                         <iconify-icon icon="solar:remote-controller-2-bold" width="22"></iconify-icon>
                     </div>
-                    <h3 class="text-2xl font-semibold text-white font-sans">Live Control</h3>
+                    <h3 class="text-2xl font-semibold text-[#1B3139] font-sans">Live Control</h3>
                 </div>
-                <ul class="space-y-4">
-                    <li class="flex items-start gap-3 text-base text-neutral-300 font-sans">
+                <ul class="space-y-5">
+                    <li class="flex items-start gap-3 text-base text-neutral-700 font-sans">
                         <iconify-icon icon="solar:play-circle-bold" class="text-[#8B0000] mt-0.5 shrink-0" width="20"></iconify-icon>
-                        <span><span class="text-white font-medium">Pause &amp; resume</span> running agents without redeploying</span>
+                        <span><span class="text-[#1B3139] font-semibold">Pause &amp; resume</span> running agents without redeploying</span>
                     </li>
-                    <li class="flex items-start gap-3 text-base text-neutral-300 font-sans">
+                    <li class="flex items-start gap-3 text-base text-neutral-700 font-sans">
                         <iconify-icon icon="solar:stop-circle-bold" class="text-[#8B0000] mt-0.5 shrink-0" width="20"></iconify-icon>
-                        <span><span class="text-white font-medium">Emergency stop</span> &mdash; halt any agent immediately, trigger global circuit breakers manually</span>
+                        <span><span class="text-[#1B3139] font-semibold">Emergency stop</span> &mdash; halt any agent immediately, trigger global circuit breakers manually</span>
                     </li>
-                    <li class="flex items-start gap-3 text-base text-neutral-300 font-sans">
+                    <li class="flex items-start gap-3 text-base text-neutral-700 font-sans">
                         <iconify-icon icon="solar:pen-new-round-bold" class="text-[#8B0000] mt-0.5 shrink-0" width="20"></iconify-icon>
-                        <span><span class="text-white font-medium">Change rules live</span> &mdash; adjust budgets, limits, rate limits, tool access, and permissions while agents are running</span>
+                        <span><span class="text-[#1B3139] font-semibold">Change rules live</span> &mdash; adjust budgets, limits, rate limits, tool access, and permissions while agents run</span>
                     </li>
-                    <li class="flex items-start gap-3 text-base text-neutral-300 font-sans">
+                    <li class="flex items-start gap-3 text-base text-neutral-700 font-sans">
                         <iconify-icon icon="solar:lock-keyhole-bold" class="text-[#8B0000] mt-0.5 shrink-0" width="20"></iconify-icon>
-                        <span><span class="text-white font-medium">Decision enforcement controls</span> &mdash; toggle plan-vs-execute mode, break loops, modify retry &amp; budget behavior at runtime</span>
+                        <span><span class="text-[#1B3139] font-semibold">Decision enforcement controls</span> &mdash; toggle plan-vs-execute mode, break loops, modify retry &amp; budget behavior at runtime</span>
                     </li>
-                    <li class="flex items-start gap-3 text-base text-neutral-300 font-sans">
+                    <li class="flex items-start gap-3 text-base text-neutral-700 font-sans">
                         <iconify-icon icon="solar:rewind-back-bold" class="text-[#8B0000] mt-0.5 shrink-0" width="20"></iconify-icon>
-                        <span><span class="text-white font-medium">Roll back last action</span> or resume from any safe checkpoint in the execution history</span>
+                        <span><span class="text-[#1B3139] font-semibold">Roll back last action</span> or resume from any safe checkpoint in the execution history</span>
                     </li>
                 </ul>
             </div>
 
             <!-- Paid Coordination Features -->
-            <div class="bg-white/5 backdrop-blur border border-white/10 rounded-[32px] p-8">
+            <div class="bg-white border border-neutral-200 rounded-[32px] p-8 shadow-sm">
                 <div class="flex items-center gap-3 mb-8">
-                    <div class="w-10 h-10 rounded-xl bg-[#8B0000]/20 text-[#8B0000] flex items-center justify-center">
+                    <div class="w-10 h-10 rounded-xl bg-[#8B0000]/10 text-[#8B0000] flex items-center justify-center">
                         <iconify-icon icon="solar:graph-new-bold" width="22"></iconify-icon>
                     </div>
-                    <h3 class="text-2xl font-semibold text-white font-sans">Live Coordination View</h3>
+                    <h3 class="text-2xl font-semibold text-[#1B3139] font-sans">Live Coordination View</h3>
                 </div>
-                <ul class="space-y-4">
-                    <li class="flex items-start gap-3 text-base text-neutral-300 font-sans">
+                <ul class="space-y-5">
+                    <li class="flex items-start gap-3 text-base text-neutral-700 font-sans">
                         <iconify-icon icon="solar:monitor-bold" class="text-[#8B0000] mt-0.5 shrink-0" width="20"></iconify-icon>
-                        <span><span class="text-white font-medium">Real-time agent dashboard</span> &mdash; see every agent, their shared state, ownership, checkpoints, and handoffs in a live view</span>
+                        <span><span class="text-[#1B3139] font-semibold">Real-time agent dashboard</span> &mdash; see every agent, their shared state, ownership, checkpoints, and handoffs in a live view</span>
                     </li>
-                    <li class="flex items-start gap-3 text-base text-neutral-300 font-sans">
+                    <li class="flex items-start gap-3 text-base text-neutral-700 font-sans">
                         <iconify-icon icon="solar:sort-by-time-bold" class="text-[#8B0000] mt-0.5 shrink-0" width="20"></iconify-icon>
-                        <span><span class="text-white font-medium">Coordination status</span> &mdash; see which agents are active, waiting, blocked, or eligible to act&mdash;and exactly why</span>
+                        <span><span class="text-[#1B3139] font-semibold">Coordination status</span> &mdash; see which agents are active, waiting, blocked, or eligible&mdash;and exactly why</span>
                     </li>
-                    <li class="flex items-start gap-3 text-base text-neutral-300 font-sans">
+                    <li class="flex items-start gap-3 text-base text-neutral-700 font-sans">
                         <iconify-icon icon="solar:danger-triangle-bold" class="text-[#8B0000] mt-0.5 shrink-0" width="20"></iconify-icon>
-                        <span><span class="text-white font-medium">Bottleneck detection</span> &mdash; identify coordination stalls, slow handoffs, and resource contention before they cascade</span>
+                        <span><span class="text-[#1B3139] font-semibold">Bottleneck detection</span> &mdash; identify coordination stalls, slow handoffs, and resource contention before they cascade</span>
                     </li>
-                    <li class="flex items-start gap-3 text-base text-neutral-300 font-sans">
+                    <li class="flex items-start gap-3 text-base text-neutral-700 font-sans">
                         <iconify-icon icon="solar:shield-warning-bold" class="text-[#8B0000] mt-0.5 shrink-0" width="20"></iconify-icon>
-                        <span><span class="text-white font-medium">Deadlock &amp; stall detection</span> &mdash; automatically surface when agents are stuck waiting for each other or when waits exceed expected durations</span>
+                        <span><span class="text-[#1B3139] font-semibold">Deadlock &amp; stall detection</span> &mdash; automatically surface when agents are stuck waiting on each other or waits exceed expected durations</span>
                     </li>
                 </ul>
             </div>
@@ -664,9 +741,7 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                 <iconify-icon icon="solar:arrow-right-linear" class="transition-transform group-hover:translate-x-1"></iconify-icon>
             </a>
         </div>
-
         <div class="w-full h-px bg-neutral-300 mb-8"></div>
-
         <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-8 lg:gap-16">
             <h2 class="md:text-4xl lg:text-5xl leading-[1.05] text-3xl text-[#1B3139] tracking-tight max-w-3xl font-google-sans-flex font-normal">
                 Open source control. Paid cloud visibility.
@@ -677,7 +752,7 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
         </div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <!-- Free / OSS -->
         <div class="lg:col-span-1">
             <div class="hover:shadow-md transition-shadow bg-white h-full border-neutral-200 border rounded-[32px] px-8 py-10 shadow-sm flex flex-col">
@@ -721,7 +796,7 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
         <div class="lg:col-span-1">
             <div class="hover:shadow-md transition-shadow bg-[#ebe7e2] h-full border-neutral-200 border rounded-[32px] px-8 py-10 shadow-sm flex flex-col">
                 <h3 class="text-3xl tracking-tight mb-2 font-google-sans-flex font-normal text-[#1B3139]">Splinter Cloud</h3>
-                <p class="text-neutral-500 mb-8 text-base font-sans">Live dashboard &amp; real-time control.</p>
+                <p class="text-neutral-500 mb-8 text-base font-sans">Live dashboard, real-time control, coordination intelligence.</p>
                 <div class="flex items-baseline gap-1 mb-8">
                     <span class="text-5xl font-google-sans-flex font-normal text-[#1B3139]">$49</span>
                     <span class="text-neutral-400 text-base font-sans">/mo</span>
@@ -741,49 +816,18 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
                     </li>
                     <li class="flex items-center gap-3 text-base text-neutral-600 font-sans">
                         <iconify-icon icon="solar:check-circle-bold" class="text-[#1B3139]"></iconify-icon>
-                        Live coordination view
+                        Live coordination view &amp; agent status
                     </li>
                     <li class="flex items-center gap-3 text-base text-neutral-600 font-sans">
                         <iconify-icon icon="solar:check-circle-bold" class="text-[#1B3139]"></iconify-icon>
-                        Deadlock &amp; stall detection
+                        Deadlock, stall &amp; bottleneck detection
+                    </li>
+                    <li class="flex items-center gap-3 text-base text-neutral-600 font-sans">
+                        <iconify-icon icon="solar:check-circle-bold" class="text-[#1B3139]"></iconify-icon>
+                        Rollback &amp; resume from any checkpoint
                     </li>
                 </ul>
                 <button class="hover:bg-neutral-800 transition-colors font-medium text-white font-sans bg-[#1B3139] w-full rounded-full pt-4 pb-4">Start Free Trial</button>
-            </div>
-        </div>
-
-        <!-- Enterprise -->
-        <div class="lg:col-span-1">
-            <div class="bg-[#1B3139] border border-white/10 rounded-[32px] px-8 py-10 h-full text-white relative shadow-2xl overflow-hidden flex flex-col">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-[#8B0000]/20 blur-3xl"></div>
-                <h3 class="text-3xl tracking-tight mb-2 font-google-sans-flex font-normal">Enterprise</h3>
-                <p class="text-neutral-400 mb-8 text-base font-sans">For production-scale agent fleets.</p>
-                <div class="flex items-baseline gap-1 mb-8">
-                    <span class="text-5xl font-google-sans-flex font-normal">Custom</span>
-                </div>
-                <ul class="space-y-4 mb-10 flex-grow">
-                    <li class="flex items-center gap-3 text-base text-neutral-300 font-sans">
-                        <iconify-icon icon="solar:check-circle-bold" class="text-[#8B0000]"></iconify-icon>
-                        Everything in Cloud
-                    </li>
-                    <li class="flex items-center gap-3 text-base text-neutral-300 font-sans">
-                        <iconify-icon icon="solar:check-circle-bold" class="text-[#8B0000]"></iconify-icon>
-                        VPC &amp; self-hosted deployment
-                    </li>
-                    <li class="flex items-center gap-3 text-base text-neutral-300 font-sans">
-                        <iconify-icon icon="solar:check-circle-bold" class="text-[#8B0000]"></iconify-icon>
-                        Custom policy engine
-                    </li>
-                    <li class="flex items-center gap-3 text-base text-neutral-300 font-sans">
-                        <iconify-icon icon="solar:check-circle-bold" class="text-[#8B0000]"></iconify-icon>
-                        Unlimited history &amp; audit logs
-                    </li>
-                    <li class="flex items-center gap-3 text-base text-neutral-300 font-sans">
-                        <iconify-icon icon="solar:check-circle-bold" class="text-[#8B0000]"></iconify-icon>
-                        Dedicated support &amp; SLA
-                    </li>
-                </ul>
-                <button class="hover:opacity-90 transition-opacity font-medium text-white font-sans bg-[#8B0000] w-full rounded-full pt-4 pb-4">Contact Sales</button>
             </div>
         </div>
     </div>
@@ -793,17 +837,14 @@ radial-gradient(at 0% 100%, hsla(0, 0%, 95%, 0.6) 0, transparent 50%);
 <section class="overflow-hidden bg-[#e3ddd7] border-neutral-200 pt-24 pb-24 relative">
   <div class="max-w-7xl z-10 mr-auto ml-auto pt-0 pr-6 pb-0 pl-6 relative">
     <div class="overflow-hidden lg:p-24 text-center bg-white border-neutral-200/60 border rounded-[40px] px-12 py-12 relative shadow-sm">
-      <!-- Subtle Background Glow -->
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(139,0,0,0.07),transparent_50%)] pointer-events-none">
-      </div>
-
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(139,0,0,0.07),transparent_50%)] pointer-events-none"></div>
       <div class="relative z-10 flex flex-col items-center max-w-4xl mx-auto">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B0000]/10 border border-[#8B0000]/20 mb-10">
-          <span class="text-xs font-semibold text-[#8B0000] uppercase tracking-widest font-sans">Ready to ship safer agents?</span>
+          <span class="text-xs font-semibold text-[#8B0000] uppercase tracking-widest font-sans">Ship with confidence</span>
         </div>
 
         <h2 class="text-4xl md:text-5xl lg:text-6xl text-[#1B3139] tracking-tight leading-[1.1] mb-8 font-google-sans-flex font-normal">
-          Your agents need guardrails. <span class="text-[#8B0000] font-google-sans-flex font-normal">Splinter is those guardrails.</span>
+          Stop losing control. <span class="text-[#8B0000] font-google-sans-flex font-normal">Start enforcing it.</span>
         </h2>
 
         <p class="text-lg text-neutral-600 mb-12 leading-relaxed max-w-2xl font-sans">
